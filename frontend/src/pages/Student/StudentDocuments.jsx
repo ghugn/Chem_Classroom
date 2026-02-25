@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import api from '../../services/api';
+import API_BASE_URL from '../../config/apiConfig';
 import { motion } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
 
@@ -163,7 +164,7 @@ const StudentDocuments = () => {
                                         <td className="px-4 py-3 text-slate-600 dark:text-slate-400">{new Date(doc.created_at).toLocaleDateString('vi-VN')}</td>
                                         <td className="px-4 py-3 text-center">
                                             {doc.file_url ? (
-                                                <a href={`http://localhost:5000${doc.file_url}`} target="_blank" rel="noopener noreferrer" className="px-3 py-1 bg-indigo-50 text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-400 rounded hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition-all duration-150 text-[11px] font-medium border border-indigo-100 dark:border-indigo-500/30">Download</a>
+                                                <a href={`${API_BASE_URL}${doc.file_url}`} target="_blank" rel="noopener noreferrer" className="px-3 py-1 bg-indigo-50 text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-400 rounded hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition-all duration-150 text-[11px] font-medium border border-indigo-100 dark:border-indigo-500/30">Download</a>
                                             ) : (
                                                 <span className="text-[11px] text-gray-400 italic">Không có file</span>
                                             )}

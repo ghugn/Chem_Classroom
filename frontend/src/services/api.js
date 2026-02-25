@@ -1,8 +1,9 @@
 import axios from 'axios';
+import API_BASE_URL from '../config/apiConfig';
 
 // Create an Axios instance
 const api = axios.create({
-    baseURL: 'http://localhost:5000/api', // Adjust if backend runs on a different port/URL
+    baseURL: `${API_BASE_URL}/api`, // Adjust if backend runs on a different port/URL
 });
 
 // Request interceptor for adding the JWT token

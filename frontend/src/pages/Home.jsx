@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../config/apiConfig';
 
 const Home = () => {
     const [health, setHealth] = useState('Loading backend status...');
 
     useEffect(() => {
         // Basic test of the backend /api/health route
-        axios.get('http://localhost:5000/api/health')
+        axios.get(`${API_BASE_URL}/api/health`)
             .then(res => setHealth(res.data.message))
             .catch(err => setHealth('Backend is not running or unreachable.'));
     }, []);
