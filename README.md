@@ -1,2 +1,2 @@
-# Chem_Classroom
-A website I made for my teacher
+# Chem_Class
+A website I made for my Chemistry teacher
